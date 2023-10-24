@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyC20zw-ac0BmCXlg8IfiwcdUdNqJKQsoSA",
   authDomain: "brain-gaze.firebaseapp.com",
@@ -12,7 +12,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 document.getElementById("btn-ocular-track-start").addEventListener("click", function(){
 	webgazer.setGazeListener(function(data, elapsedTime) {
@@ -23,5 +22,4 @@ document.getElementById("btn-ocular-track-start").addEventListener("click", func
 		var yprediction = data.y; //these y coordinates are relative to the viewport
 		console.log(elapsedTime); //elapsed time is based on time since begin was called
 	}).begin();
-	
 })
